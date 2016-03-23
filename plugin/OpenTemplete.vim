@@ -14,7 +14,7 @@ let g:loaded_OpenTemplete = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! OpenTemplete :call OpenTemplete#Main()
+command! OpenTemplate :call OpenTemplete#Main()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
