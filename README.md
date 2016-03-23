@@ -1,0 +1,6 @@
+## OpenTemplete.vim
+
+
+## installation
+```vim
+```
