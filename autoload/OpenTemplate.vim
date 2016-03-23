@@ -1,35 +1,35 @@
 "=============================================================================
-" File: OpenTemplete.vim
+" File: OpenTemplate.vim
 " Author: chakku
 " Created: 2016-03-23
 "=============================================================================
 
 scriptencoding utf-8
 
-if !exists('g:loaded_OpenTemplete')
+if !exists('g:loaded_OpenTemplate')
     finish
 endif
-let g:loaded_OpenTemplete = 1
+let g:loaded_OpenTemplate = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
 "自身のディレクトリへのパス
-let g:OpenTemplete#source_dir = expand('<sfile>:p:h')
+let g:OpenTemplate#source_dir = expand('<sfile>:p:h')
 "テンプレートファイルの置いてあるディレクトリへのパス
-let g:OpenTemplete#templete_dir = g:OpenTemplete#source_dir . '/TempleteFile/'
+let g:OpenTemplate#Template_dir = g:OpenTemplate#source_dir . '/TemplateFile/'
 "テンプレートファイルへのパス
-let g:OpenTemplete#templete_file = g:OpenTemplete#templete_dir . 'templete.' . expand('%:e')
+let g:OpenTemplate#Template_file = g:OpenTemplate#Template_dir . 'template.' . expand('%:e')
 
-function! OpenTemplete#Main() abort
+function! OpenTemplate#Main() abort
 "テンプレートファイルの中身
     if expand('%:e')==''
         echoerr "拡張子が不明なためテンプレートが開けない死ね"
         return
     endif
-    let g:OpenTemplete#templete = readfile(g:OpenTemplete#templete_file)
-    let g:OpenTemplete#templete_rev = reverse(g:OpenTemplete#templete)
-    for str in g:OpenTemplete#templete_rev
+    let g:OpenTemplate#Template = readfile(g:OpenTemplate#Template_file)
+    let g:OpenTemplate#Template_rev = reverse(g:OpenTemplate#Template)
+    for str in g:OpenTemplate#Template_rev
         call append(0,str)
     endfor
 endfunction
