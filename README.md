@@ -1,7 +1,7 @@
 ## OpenTemplate.vim
 
 ##スペルミスりました！！！！
-##スペル直しました(コード内で治ってないorz)
+とりあえずリポジトリ名とコマンド名だけ直す
 
 ##何をするプラグインか
 プログラミング言語ごとの自作テンプレートを展開するプラグイン 
@@ -11,11 +11,11 @@
 :OpenTemplete
 ````
 とすれば拡張子からテンプレートを展開してくれる。
-テンプレートはOpenTemplete/autoload/TempleteFileに
-templete.+拡張子
+テンプレートはOpenTemplate/autoload/TemplateFileに
+template.+拡張子
 という名前で保存すれば使える
 
 ## installation
 ```
-NeoBundle 'chakku000/OpenTemplete.vim'
+NeoBundle 'chakku000/OpenTemplate.vim'
 ```
