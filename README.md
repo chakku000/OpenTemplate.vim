@@ -18,8 +18,8 @@ template.+拡張子
 まず、最新版にする(NeoBundleを使用しているなら:NeoBundleUpdateなどで). 
 
 テンプレートファイルを置いておくディレクトリを指定する方法.例えば 
-$HOME/Template/template.cpp 
-$HOME/Template/template.c 
+$HOME/Template/template.cpp ,  
+$HOME/Template/template.c  
 のように配置するなら.vimrc(neovimの場合はinit.vim)に 
 ```
 let g:OpenTemplate#Template_dir = '~/Template'
