@@ -17,10 +17,12 @@ set cpo&vim
 "自身のディレクトリへのパス
 let g:OpenTemplate#source_dir = expand('<sfile>:p:h')
 "テンプレートファイルの置いてあるディレクトリへのパス
-let g:OpenTemplate#Template_dir = g:OpenTemplate#source_dir . '/TemplateFile/'
+"let g:OpenTemplate#Template_dir = g:OpenTemplate#source_dir . '/TemplateFile/'
+let g:OpenTemplate#Template_dir = get(g:,'OpenTemplate#Template_dir',g:OpenTemplate#source_dir.'/TemplateFile')
+
+"自分でテンプレートファイルの場所を設定できるようにする
 
 function! OpenTemplate#Main() abort
-"テンプレートファイルの中身
     "echoerr "TEST MODE"
     "==#:大文字と小文字の区別をする比較演算子
     if expand('%:e')==#''
@@ -28,7 +30,7 @@ function! OpenTemplate#Main() abort
         return
     endif
     "テンプレートファイルへのパス
-    let g:OpenTemplate#Template_file = g:OpenTemplate#Template_dir . 'template.' . expand('%:e')
+    let g:OpenTemplate#Template_file = expand(g:OpenTemplate#Template_dir) . '/template.' . expand('%:e')
     if !filereadable(g:OpenTemplate#Template_file)
         echoerr "テンプレートファイルが存在しない死ね"
         return
