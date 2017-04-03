@@ -26,13 +26,13 @@ function! OpenTemplate#Main() abort
     "echoerr "TEST MODE"
     "==#:大文字と小文字の区別をする比較演算子
     if expand('%:e')==#''
-        echoerr "拡張子が不明なためテンプレートが開けない死ね"
+        echoerr "拡張子が不明なためテンプレートが開けません.編集ファイルの拡張子を確認してください."
         return
     endif
     "テンプレートファイルへのパス
     let g:OpenTemplate#Template_file = expand(g:OpenTemplate#Template_dir) . '/template.' . expand('%:e')
     if !filereadable(g:OpenTemplate#Template_file)
-        echoerr "テンプレートファイルが存在しない死ね"
+        echoerr "テンプレートファイルが存在しません.編集ファイルと同じ拡張子のテンプレートが存在しているか確認してください."
         return
     endif
     call append(0,readfile(g:OpenTemplate#Template_file))
